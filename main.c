@@ -9,6 +9,7 @@ int	ft_isascii(int c);
 int	ft_islower(int c);
 int	ft_isupper(int c);
 int	ft_isalpha(int c);
+int	ft_isalnum(int c);
 
 
 int	test_isdigit(void)
@@ -109,6 +110,7 @@ int	test_isupper(void)
 
 int	test_isalpha(void)
 {
+//	printf("0: %d, %d\n", ft_isupper('Z'), isupper('Z'));
 	if (ft_isalpha(-1) != isalpha(-1))
 		return (0);
 	if (ft_isalpha(0) != isalpha(0))
@@ -128,6 +130,28 @@ int	test_isalpha(void)
 	return (1);
 }
 
+int	test_isalnum(void)
+{
+//	printf("0: %d, %d\n", ft_isalnum(255), isalnum(255));
+	if (ft_isalnum(-1) != isalnum(-1))
+		return (0);
+	if (ft_isalnum(0) != isalnum(0))
+		return (0);
+	if (ft_isalnum('a') != isalnum('a'))
+		return (0);
+	if (ft_isalnum('z') != isalnum('z'))
+		return (0);
+	if (ft_isalnum('f') != isalnum('f'))
+		return (0);
+	if (ft_isalnum('Z') != isalnum('Z'))
+		return (0);
+	if (ft_isalnum(123) != isalnum(123))
+		return (0);
+	if (ft_isalnum(95) != isalnum(95))
+		return (0);
+	return (1);
+}
+
 int main(int ac, char **av)
 {
 	ft_puts("KO");//MANQUE FT_STRLEN
@@ -137,5 +161,6 @@ int main(int ac, char **av)
 	printf("is_lower: %s\n", test_islower() == 1 ? "ok" : "ko");//BONUS
 	printf("is_upper: %s\n", test_isupper() == 1 ? "ok" : "ko");//BONUS
 	printf("is_alpha: %s\n", test_isalpha() == 1 ? "ok" : "ko");
+	printf("is_alnum: %s\n", test_isalnum() == 1 ? "ok" : "ko");
 	return (0);
 }
