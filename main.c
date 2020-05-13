@@ -109,33 +109,22 @@ int	test_isupper(void)
 
 int	test_isalpha(void)
 {
-	printf("TEST_IS_ALPHA\n");
-	printf("0: %d, %d\n", ft_isalpha('z'), isalpha('z'));
-/*
 	if (ft_isalpha(-1) != isalpha(-1))
 		return (0);
-	printf("1: %d, %d\n", ft_isalpha('z'), isalpha('z'));
 	if (ft_isalpha(0) != isalpha(0))
 		return (0);
-	printf("2: %d, %d\n", ft_isalpha('z'), isalpha('z'));
 	if (ft_isalpha('a') != isalpha('a'))
 		return (0);
-	printf("3: %d, %d\n", ft_isalpha('z'), isalpha('z'));
 	if (ft_isalpha('z') != isalpha('z'))
 		return (0);
-	printf("4: %d, %d\n", ft_isalpha('z'), isalpha('z'));
-	if (ft_isalpha(1) != isalpha('f'))
+	if (ft_isalpha('f') != isalpha('f'))
 		return (0);
-	printf("5: %d, %d\n", ft_isalpha('z'), isalpha('z'));
 	if (ft_isalpha('Z') != isalpha('Z'))
 		return (0);
-	printf("6: %d, %d\n", ft_isalpha('z'), isalpha('z'));
 	if (ft_isalpha(123) != isalpha(123))
 		return (0);
-	printf("7: %d, %d\n", ft_isalpha('z'), isalpha('z'));
 	if (ft_isalpha(95) != isalpha(95))
 		return (0);
-	printf("8: %d, %d\n", ft_isalpha('z'), isalpha('z'));*/
 	return (1);
 }
 

@@ -4,12 +4,13 @@ extern ft_islower
 
 section .text
   ft_isalpha:
-    push rbp
+    push rbp		;Sauvegarde le registre de stack
+    mov rbp, rsp
     push rdi
     call ft_isupper	;On regarde si c est une majuscule
+    pop rdi		;On recupere rdi, au cas ou il a ete modifie
     cmp rax, 0		;On compare le retour avec 0
     jne is_alpha	;si il n est pas egal a zero, on jump
-    pop rdi		;On recupere rdi, au cas ou il a ete modifie
     call ft_islower	;on regarde si c est ine minuscule
     cmp rax, 0		;On compare le retour avec 0
     jne is_alpha	;si il n est pas egal a zero, on jump
