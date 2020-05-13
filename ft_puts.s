@@ -1,10 +1,14 @@
 global ft_puts
+extern ft_strlen
 
 section .text
   ft_puts:
-    ;push rbp
-    ;push rdi
-    mov rdx, 3;METTRE LA LEN ICI
+    push rbp
+    mov rbp, rsp
+    push rdi
+    call ft_strlen
+    pop rdi
+    mov rdx, rax;
     mov rax, 1
     mov rsi, rdi
     mov rdi, 1
@@ -14,7 +18,7 @@ section .text
     mov rsi, yo
     mov rdx, 1
     syscall
-    ;pop rbp
+    pop rbp
     ret
 
 section .data

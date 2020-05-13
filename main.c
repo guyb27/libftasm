@@ -10,6 +10,9 @@ int	ft_islower(int c);
 int	ft_isupper(int c);
 int	ft_isalpha(int c);
 int	ft_isalnum(int c);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
+int	ft_strlen(char *str);
 
 
 int	test_isdigit(void)
@@ -152,9 +155,53 @@ int	test_isalnum(void)
 	return (1);
 }
 
+int	test_tolower(void)
+{
+//	printf("0: %d, %d\n", ft_tolower('A'), tolower('A'));
+	if (ft_tolower(-1) != tolower(-1))
+		return (0);
+	if (ft_tolower(0) != tolower(0))
+		return (0);
+	if (ft_tolower('a') != tolower('a'))
+		return (0);
+	if (ft_tolower('z') != tolower('z'))
+		return (0);
+	if (ft_tolower('f') != tolower('f'))
+		return (0);
+	if (ft_tolower('Z') != tolower('Z'))
+		return (0);
+	if (ft_tolower(123) != tolower(123))
+		return (0);
+	if (ft_tolower(95) != tolower(95))
+		return (0);
+	return (1);
+}
+
+int	test_toupper(void)
+{
+//	printf("0: %d, %d\n", ft_toupper('A'), toupper('A'));
+	if (ft_toupper(-1) != toupper(-1))
+		return (0);
+	if (ft_toupper(0) != toupper(0))
+		return (0);
+	if (ft_toupper('a') != toupper('a'))
+		return (0);
+	if (ft_toupper('z') != toupper('z'))
+		return (0);
+	if (ft_toupper('f') != toupper('f'))
+		return (0);
+	if (ft_toupper('Z') != toupper('Z'))
+		return (0);
+	if (ft_toupper(123) != toupper(123))
+		return (0);
+	if (ft_toupper(95) != toupper(95))
+		return (0);
+	return (1);
+}
+
 int main(int ac, char **av)
 {
-	ft_puts("KO");//MANQUE FT_STRLEN
+	ft_puts("Bonjour les amis");//MANQUE FT_STRLEN
 	printf("is_digit: %s\n", test_isdigit() == 1 ? "ok" : "ko");
 	printf("is_print: %s\n", test_isprint() == 1 ? "ok" : "ko");
 	printf("is_ascii: %s\n", test_isascii() == 1 ? "ok" : "ko");
@@ -162,5 +209,8 @@ int main(int ac, char **av)
 	printf("is_upper: %s\n", test_isupper() == 1 ? "ok" : "ko");//BONUS
 	printf("is_alpha: %s\n", test_isalpha() == 1 ? "ok" : "ko");
 	printf("is_alnum: %s\n", test_isalnum() == 1 ? "ok" : "ko");
+	printf("tolower: %s\n", test_tolower() == 1 ? "ok" : "ko");
+	printf("toupper: %s\n", test_toupper() == 1 ? "ok" : "ko");
+	printf("ft_strlen: %d\n", ft_strlen("bon"));
 	return (0);
 }
