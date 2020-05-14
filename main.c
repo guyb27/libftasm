@@ -18,7 +18,9 @@ int	ft_strlen(char *str);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_strcpy(char *dest, const char *src);
+char	*ft_strcpy(char *dest, const char *src);
+char	*ft_strcat(char *dest, const char *src);
+char	*ft_strdup(const char *s);
 
 
 int	test_isdigit(void)
@@ -283,9 +285,53 @@ int	test_strcpy(void)
 	return (1);
 }
 
+int	test_strcat(void)
+{
+	char str1[15];
+	char str2[30];
+
+	ft_bzero(str1, sizeof(str1));
+	ft_bzero(str2, sizeof(str2));
+	ft_memset(str1, 65, sizeof(str1) - 1);
+	ft_memset(str2, 66, sizeof(str1) - 1);
+	ft_strcat(str2, str1);
+	printf("STRCAT: [%s]\n", str2);
+	//ft_bzero(str2, sizeof(str2));
+	//ft_strcat(str2, str2);
+	//printf("STRCPY2: [%s]\n", str2);
+/*
+	ft_bzero(str2, sizeof(str2));
+	ft_memcpy(str2, str1, 15);//overflows
+	printf("MEMCPY: [%s]\n", str2);
+	ft_bzero(str2, sizeof(str2));
+	ft_memcpy(str2, str1, 14);
+	printf("MEMCPY: [%s]\n", str2);*/
+	return (1);
+}
+
+int	test_strdup(void)
+{
+	char *str;
+
+	str = ft_strdup("Bonjour les amis");
+	printf("STRDUP: [%s]\n", str);
+	//ft_bzero(str2, sizeof(str2));
+	//ft_strdup(str2, str2);
+	//printf("STRCPY2: [%s]\n", str2);
+/*
+	ft_bzero(str2, sizeof(str2));
+	ft_memcpy(str2, str1, 15);//overflows
+	printf("MEMCPY: [%s]\n", str2);
+	ft_bzero(str2, sizeof(str2));
+	ft_memcpy(str2, str1, 14);
+	printf("MEMCPY: [%s]\n", str2);*/
+	return (1);
+}
+
 int main(int ac, char **av)
 {
 	ft_puts("Bonjour les amis");
+	puts("Bonjour les amis");
 	printf("is_digit: %s\n", test_isdigit() == 1 ? "ok" : "ko");
 	printf("is_print: %s\n", test_isprint() == 1 ? "ok" : "ko");
 	printf("is_ascii: %s\n", test_isascii() == 1 ? "ok" : "ko");
@@ -299,5 +345,7 @@ int main(int ac, char **av)
 	printf("memset_bzero: %s\n", test_memset_bzero() == 1 ? "ok" : "ko");
 	printf("memcpy: %s\n", test_memcpy() == 1 ? "ok" : "ko");
 	printf("strcpy: %s\n", test_strcpy() == 1 ? "ok" : "ko");//BONUS
+	printf("strcat: %s\n", test_strcat() == 1 ? "ok" : "ko");
+	printf("strdup: %s\n", test_strdup() == 1 ? "ok" : "ko");
 	return (0);
 }

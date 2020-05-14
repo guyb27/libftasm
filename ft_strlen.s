@@ -16,6 +16,6 @@ section .text
 		;why scasb ? because a char == 1 byte
     mov rax, rcx;on recupere le compteur
     neg rax	;on passe le compteur en positif
-    sub rax, 2	;on lui rajoute 2 car on l a fait demarer a -1
+    sub rax, 2	;on lui soustrais 2 car on l a fait demarer a -1
     pop rbp	;
     ret		;
