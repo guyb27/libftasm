@@ -19,6 +19,7 @@ SRCS_FILES = ft_bzero.s \
 	ft_isprint.s \
 	ft_isupper.s \
 	ft_memalloc.s \
+	ft_strnew.s \
 	ft_memcpy.s \
 	ft_memset.s \
 	ft_puts.s \
