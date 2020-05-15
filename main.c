@@ -3,8 +3,10 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <fcntl.h>
 
 void	ft_puts(const char *s);
+void	ft_fputs(const char *s, int fd);
 int	ft_isdigit(int c);
 int	ft_isprint(int c);
 int	ft_isascii(int c);
@@ -21,6 +23,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strdup(const char *s);
+int	ft_putchar_fd(char c, int fd);
+int	ft_putstr_fd(char *s, int fd);
+int	ft_putstr(char *s);
+void	ft_cat(int fd);
+void	*ft_memalloc(size_t size);
 
 
 int	test_isdigit(void)
@@ -347,5 +354,21 @@ int main(int ac, char **av)
 	printf("strcpy: %s\n", test_strcpy() == 1 ? "ok" : "ko");//BONUS
 	printf("strcat: %s\n", test_strcat() == 1 ? "ok" : "ko");
 	printf("strdup: %s\n", test_strdup() == 1 ? "ok" : "ko");
+	//ft_putchar_fd('0', 1);//FONCTIONNE PAS//BONUS
+	//ft_putchar_fd('\n', 1);//FONCTIONNE PAS//BONUS
+	ft_putstr_fd("PUTSTR_FD\n", 1);//BONUS
+	ft_putstr("PUTSTR\n");//BONUS
+	ft_fputs("FPUTS", 1);//BONUS
+	int size = 1024;
+	char *str = ft_memalloc(size);//BONUS
+//	for (int i = 0;str[i] == 0 && i<size;i++)
+///		printf("I:%d\n", i);
+		
+	printf("MEMALLOC: %s\n", str[0] ? "KO" : "OK");
+	//FILE
+	ft_cat(0);
+	//ft_cat(open(__file__, O_RDONLY));
+	//ft_cat(open(av[0], O_RDONLY));
+	//ft_cat(-42);
 	return (0);
 }

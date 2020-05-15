@@ -15,5 +15,4 @@ section .text
     mov rdi, rax
     call ft_strcpy
     pop rbp
-    ret
-    
+    ret    
