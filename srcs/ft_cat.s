@@ -19,10 +19,14 @@ section .text
       cmp rax, 0
       jle end
       push rdi
+      push rax
+      mov rax, 1
+      mov rdi, 1
+      mov rsi, buf
+      pop rdx
+      syscall
       mov rdi, buf
-      call ft_putstr
-      mov rdi, buf
-      mov rsi, rax
+      mov rsi, 1024
       call ft_bzero
       pop rdi
       jmp read_line

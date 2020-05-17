@@ -341,7 +341,7 @@ int	test_strnew(int size)
 
 int main(int ac, char **av)
 {
-	printf("is_digit: %s\n", test_isdigit() == 1 ? "ok" : "ko");
+/*	printf("is_digit: %s\n", test_isdigit() == 1 ? "ok" : "ko");
 	printf("is_print: %s\n", test_isprint() == 1 ? "ok" : "ko");
 	printf("is_ascii: %s\n", test_isascii() == 1 ? "ok" : "ko");
 	printf("is_lower: %s\n", test_islower() == 1 ? "ok" : "ko");//BONUS
@@ -355,14 +355,15 @@ int main(int ac, char **av)
 	printf("strcat: %s\n", test_strcat() == 1 ? "ok" : "ko");
 	printf("strdup: %s\n", test_strdup() == 1 ? "ok" : "ko");
 	printf("memset_bzero: %s\n", test_memset_bzero() == 1 ? "ok" : "ko");
-	printf("memcpy: %s\n", test_memcpy() == 1 ? "ok" : "ko");
-	printf("memalloc: %s\n", test_memalloc(2000) == 1 ? "ok" : "ko");//BONUS
+*/	printf("memcpy: %s\n", test_memcpy() == 1 ? "ok" : "ko");
+/*	printf("memalloc: %s\n", test_memalloc(2000) == 1 ? "ok" : "ko");//BONUS
 	printf("strnew: %s\n", test_strnew(2000) == 1 ? "ok" : "ko");//BONUS
 	ft_putstr_fd("putstr_fd ok\n", 1);//BONUS
 	ft_putstr("putstr ok\n");//BONUS
 	ft_fputs("fputs ok", 1);//BONUS
 	ft_puts("puts ok");
 	ft_cat(0);
-	ft_cat(-42);
+	ft_cat(-42);*/
+//	ft_cat(open(av[0], O_RDONLY));
 	return (0);
 }
