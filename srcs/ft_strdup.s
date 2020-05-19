@@ -10,6 +10,7 @@ section .text
     push rdi
     call ft_strlen
     mov rdi, rax
+    add rdi, 1
     call malloc
     pop rsi
     mov rdi, rax

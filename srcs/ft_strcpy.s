@@ -1,6 +1,6 @@
 global ft_strcpy
 extern ft_strlen
-extern ft_memcpy
+extern ft_strncpy
 
 section .text
   ft_strcpy:
@@ -12,10 +12,8 @@ section .text
     call ft_strlen
     pop rsi
     pop rdi
-    push rdi
     mov rdx, rax
     add rdx, 1
-    call ft_memcpy;void *ft_memcpy(void *dest, const void *src, size_t n)
-    pop rax
+    call ft_strncpy;void *ft_strncpy(void *dest, const void *src, size_t n)
     pop rbp
     ret

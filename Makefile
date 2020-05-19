@@ -27,6 +27,7 @@ SRCS_FILES = ft_bzero.s \
 	ft_putstr.s \
 	ft_strcat.s \
 	ft_strcpy.s \
+	ft_strncpy.s \
 	ft_strdup.s \
 	ft_strlen.s \
 	ft_tolower.s \

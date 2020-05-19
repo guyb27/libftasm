@@ -8,7 +8,7 @@ section .text
 		;a 0 afin de commencer a partir de
 		;la gauche (deja definie par default)
     mov rcx, -1	;Registre de compteur qui va se decrementer
-    mov rax, 0	;Registre de comparaison pour scasb qui va
+    mov al, 0	;Registre de comparaison pour scasb qui va
 		;placer le ZF flag a 1 si les bytes sont identiques
     repne scasb	;repne va incrementer rdi tant que scasb ne
 		;met pas le ZF flag a 1
