@@ -340,7 +340,7 @@ int	test_strnew(int size)
 
 
 int main(int ac, char **av)
-{
+{/*
 	printf("is_digit: %s\n", test_isdigit() == 1 ? "ok" : "ko");
 	printf("is_print: %s\n", test_isprint() == 1 ? "ok" : "ko");
 	printf("is_ascii: %s\n", test_isascii() == 1 ? "ok" : "ko");
@@ -361,9 +361,9 @@ int main(int ac, char **av)
 	ft_putstr_fd("putstr_fd ok\n", 1);//BONUS
 	ft_putstr("putstr ok\n");//BONUS
 	ft_fputs("fputs ok", 1);//BONUS
-	ft_puts("puts ok");
+	ft_puts("puts ok");*/
 //	ft_cat(0);
 //	ft_cat(-42);
-//	ft_cat(open(av[0], O_RDONLY));
+	ft_cat(open(av[0], O_RDONLY));
 	return (0);
 }
